@@ -1,0 +1,33 @@
+.header-container{
+    display:flex;
+    padding: auto;
+}
+
+.header-fixed{
+    background-color:#4F628E;
+    width: 60%;
+    color: #ffffff;
+    text-align: center;
+}
+.header-user{
+    padding-left: 10px;
+    flex-grow: 1;
+    align-content: center;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+.post-title{
+    background: midnightblue;
+}
+
+.white-text{
+    color: white;
+}
+
+.lightblue-text{
+    color: #2aabd2;
+}
+

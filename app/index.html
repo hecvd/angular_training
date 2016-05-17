@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="AngularTraining1">
+<head>
+    <meta charset="utf-8">
+    <title>Angular Training Task 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+</head>
+<body ng-controller="main">
+
+<div>
+    <button ng-model="mbutton">{{mbutton}}</button>
+</div>
+</div>
+<script>
+    var app = angular.module("AngularTraining1", []);
+
+    app.controller('main', function($scope) {
+        $scope.mbutton = "press me!"
+    });
+</script>
+</body>
+</html>
