@@ -1,20 +1,7 @@
-<div ng-repeat="singlePost in blog.blogInfo.userPosts">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <div class="row">
-                <div class="col-xs-12 col-md-8">
-                    <strong>{{singlePost.title}}</strong>
-                    <a href="#" ng-if="!singlePost.bodyVisible" ng-click="singlePost.bodyVisible = true">>></a>
-                    <a href="#" ng-if="singlePost.bodyVisible" ng-click="singlePost.bodyVisible = false"><<</a>
-                </div>
-                <div class="col-xs-6 col-md-4">Edit | Delete</div>
-            </div>
-            <div class="row lightblue-text">
-                <div class="col-xs-12 col-md-8"> by {{blog.blogInfo.userdict.name}}</div>
-                <div class="col-xs-6 col-md-4">
-                    Comments: {{singlePost.comments.length}}
-                </div>
-            </div>
+<div>
+    <div class="panel panel-default" ng-repeat="singlePost in userPosts">
+        <div class="panel-heading" >
+            <ng-post-view single-post="singlePost" user-name="{{userName}}"></ng-post-view>
         </div>
         <div class="panel-body" ng-if="singlePost.bodyVisible">
             <p>

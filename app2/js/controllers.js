@@ -1,7 +1,10 @@
-var app2 = angular.module('app2', ['BlogService', 'PostDirective']);
+var app2 = angular.module('app2', 
+    ['BlogService', 
+    'PostDirective', 
+    'HeaderDirective']);
 
 
-app2.controller('BlogController', ['BlogDataFactory', function (BlogDataFactory) {
+app2.controller('BlogController', ['BlogDataFactory' , '$http', function (BlogDataFactory, $http) {
 
     this.blogInfo = {
         userId: 6,
@@ -14,13 +17,12 @@ app2.controller('BlogController', ['BlogDataFactory', function (BlogDataFactory)
     };
     var bInfo = this.blogInfo;
 
-    BlogDataFactory.getUserPosts(6).then(function (data) {
-       angular.forEach(data, function (token) {
-           console.log(token)
-       })
-    });
-
-
+    // BlogDataFactory.getUserPosts(6).then(function (data) {
+    //    angular.forEach(data, function (token) {
+    //        console.log(token)
+    //    })
+    // });
+    
     BlogDataFactory.getAllData().then(
         function (data) {
             bInfo.blogdata = data;
@@ -53,6 +55,4 @@ app2.controller('BlogController', ['BlogDataFactory', function (BlogDataFactory)
             });
         }
     )
-
-
 }]);
